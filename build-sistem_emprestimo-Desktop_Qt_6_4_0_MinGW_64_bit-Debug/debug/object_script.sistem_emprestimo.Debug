@@ -1,0 +1,11 @@
+debug/create_new_user.o
+debug/insert_filme.o
+debug/main.o
+debug/janelalogin.o
+debug/pesquisar_filmes.o
+debug/tela_inicial.o
+debug/moc_create_new_user.o
+debug/moc_insert_filme.o
+debug/moc_janelalogin.o
+debug/moc_pesquisar_filmes.o
+debug/moc_tela_inicial.o

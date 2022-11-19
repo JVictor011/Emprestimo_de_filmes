@@ -1,0 +1,11 @@
+release/create_new_user.o
+release/insert_filme.o
+release/main.o
+release/janelalogin.o
+release/pesquisar_filmes.o
+release/tela_inicial.o
+release/moc_create_new_user.o
+release/moc_insert_filme.o
+release/moc_janelalogin.o
+release/moc_pesquisar_filmes.o
+release/moc_tela_inicial.o
