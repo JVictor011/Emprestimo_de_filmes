@@ -8,6 +8,7 @@
 
 #include <memory>
 #include "../../sistem_emprestimo/janelalogin.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'janelalogin.h' doesn't include <QObject>."

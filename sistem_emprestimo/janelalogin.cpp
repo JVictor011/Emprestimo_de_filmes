@@ -30,26 +30,20 @@ void JanelaLogin::on_login_button_clicked()
         qDebug()<<"Banco não ta aberto";
         return;
     }
+    int cont = 0;
+    tela_login log(nome_login, senha_login);
+    cont = log.login();
 
-    QSqlQuery query;
-
-    if(query.exec("SELECT * FROM info_login where nome='"+nome_login+"' and senha='"+senha_login+"'")){
-        int contador = 0;
-        while(query.next()){
-            contador++;
-        }
-
-        if(contador > 0){
-            this->close();
-            tela_inicial t_inicial;
-            t_inicial.setModal(true);
-            t_inicial.exec();
-        }else{
-            ui->aviso->setText("Usuario ou senha incorreto!");
-            ui->line_senha->clear();
-            ui->line_nome->clear();
-            ui->line_nome->setFocus();
-        }
+    if(cont > 0){
+        this->close();
+        tela_inicial t_inicial;
+        t_inicial.setModal(true);
+        t_inicial.exec();
+    }else{
+        ui->aviso->setText("Usuario ou senha incorreto!");
+        ui->line_senha->clear();
+        ui->line_nome->clear();
+        ui->line_nome->setFocus();
     }
 }
 

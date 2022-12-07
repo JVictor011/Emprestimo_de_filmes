@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QtSql>
+#include "ui_create_new_user.h"
 
 namespace Ui {
 class create_new_user;
@@ -23,14 +24,14 @@ private:
     Ui::create_new_user *ui;
 };
 
-class user{
+class new_user{
 private:
     QString nome;
     QString email;
     QString endereco;
     QString senha;
 public:
-    user(QString new_nome, QString new_email, QString new_endereco, QString new_senha):nome(new_nome),
+    new_user(QString new_nome, QString new_email, QString new_endereco, QString new_senha):nome(new_nome),
         email(new_email),endereco(new_endereco), senha(new_senha){}
 
     void set_nome(QString new_nome){
@@ -56,6 +57,18 @@ public:
     }
     QString get_senha(){
         return senha;
+    }
+    int create_user(){
+        int cont = 0;
+        QSqlQuery query;
+        query.prepare("insert into info_login (nome,email,senha,endereco,pontos) values"
+                      "('"+nome+"','"+email+"','"+senha+"','"+endereco+"','10')");
+        if(query.exec()){
+            cont++;
+        }else{
+            qDebug()<<"Falha no cadastro!";
+        }
+        return cont;
     }
 };
 

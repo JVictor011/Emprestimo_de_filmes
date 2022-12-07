@@ -80,6 +80,20 @@ public:
     QString get_estudio(){
         return estudio;
     }
+
+    int new_filme(QString username, QString senha){
+        int cont = 0;
+        QSqlQuery query;
+        query.prepare("insert into iten_filmes (nome, diretor, genero, estudio, valor, status) values "
+                      "('"+get_nome()+"','"+diretor+"','"+genero+"','"+estudio+"',10,'"+get_status()+"')");
+        if(query.exec()){
+            cont++;
+            query.exec("UPDATE info_login SET pontos = pontos+10 WHERE nome = '"+username+"' AND senha = '"+senha+"'");
+        }else{
+            qDebug()<<"Falha na inserção";
+        }
+        return cont;
+    }
 };
 
 #endif // INSERT_FILME_H

@@ -8,6 +8,7 @@
 
 #include <memory>
 #include "../../sistem_emprestimo/create_new_user.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'create_new_user.h' doesn't include <QObject>."

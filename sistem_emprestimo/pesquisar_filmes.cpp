@@ -85,24 +85,24 @@ void pesquisar_filmes::on_Button_busca_clicked()
 
 void pesquisar_filmes::on_Button_emprestar_clicked()
 {
+    int cont = 0;
     QString username = ui->line_username->text();
     QString senha = ui->line_senha->text();
+    emprestimo em(username, senha);
+    cont = em.verifica_conta();
     QSqlQuery query;
 
-    if(query.exec("SELECT * FROM info_login where nome='"+username+"' and senha='"+senha+"' and pontos>=10")){
-        int contador = 0;
-        while(query.next()){
-            contador++;
-        }
-
-        if(contador > 0){
-            int linha = ui->lista_de_itens->currentRow();
-            int id = ui->lista_de_itens->item(linha,0)->text().toInt();
-            query.prepare("UPDATE iten_filmes SET status = 'Indisponivel' WHERE id ="+QString::number(id));
-            if(query.exec()){
-                query.exec("UPDATE info_login SET pontos = pontos-10 WHERE nome = '"+username+"' AND senha = '"+senha+"'");
-                QMessageBox::warning(this,"SUCESSO", "O Filme foi emprestado!");
-            }
+    if(cont > 0){
+        int aux = 0;
+        int linha = ui->lista_de_itens->currentRow();
+        int id = ui->lista_de_itens->item(linha,0)->text().toInt();
+        aux = em.emprestar_filme(id);
+        if(aux == 2){
+            QMessageBox::warning(this,"SUCESSO", "O Filme foi emprestado com sucesso!");
+        }else if(aux == 1){
+            QMessageBox::warning(this,"ERRO", "ERRO no emprestimo!");
+        }else{
+            QMessageBox::warning(this,"NEGADO", "Filme indisponivel!");
         }
     }
 }
