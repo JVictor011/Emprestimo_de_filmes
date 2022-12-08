@@ -39,7 +39,7 @@
     <string>Pesquisar Filme</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="background">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -52,13 +52,15 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>DEVOLOVE_4_25.png</pixmap>
+    <pixmap resource="res.qrc">:/Img/DEVOLOVE_4_25.png</pixmap>
    </property>
   </widget>
-  <zorder>label</zorder>
+  <zorder>background</zorder>
   <zorder>Button_add_filme</zorder>
   <zorder>Button_pesq_filme</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

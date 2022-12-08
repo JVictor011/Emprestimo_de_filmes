@@ -30,6 +30,9 @@ FORMS += \
     pesquisar_filmes.ui \
     tela_inicial.ui
 
+RESOURCES += \
+    res.qrc
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
