@@ -1,5 +1,6 @@
 #include "insert_filme.h"
 #include "ui_insert_filme.h"
+#include <QMessageBox>
 
 insert_filme::insert_filme(QWidget *parent) :
     QDialog(parent),
@@ -23,6 +24,7 @@ void insert_filme::on_Button_add_clicked()
                  ui->line_nome->text(), status, 10);
     cont = f.new_filme(username, senha);
     if(cont == 1){
+        QMessageBox::warning(this,"SUCESSO", "Filme foi adicionado com sucesso!");
         ui->line_nome->clear();
         ui->line_diretor->clear();
         ui->line_estudio->clear();

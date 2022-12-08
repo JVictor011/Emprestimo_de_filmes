@@ -92,6 +92,28 @@
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>791</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>DEVOLOVE_4.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>line_pesquisa</zorder>
+  <zorder>Button_busca</zorder>
+  <zorder>lista_de_itens</zorder>
+  <zorder>label</zorder>
+  <zorder>splitter</zorder>
  </widget>
  <resources/>
  <connections/>

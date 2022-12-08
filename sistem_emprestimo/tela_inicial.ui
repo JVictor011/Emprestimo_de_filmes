@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>997</width>
+    <height>554</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="Button_add_filme">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>729</x>
      <y>10</y>
-     <width>380</width>
+     <width>131</width>
      <height>24</height>
     </rect>
    </property>
@@ -29,9 +29,9 @@
   <widget class="QPushButton" name="Button_pesq_filme">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>50</y>
-     <width>380</width>
+     <x>869</x>
+     <y>10</y>
+     <width>121</width>
      <height>24</height>
     </rect>
    </property>
@@ -39,6 +39,25 @@
     <string>Pesquisar Filme</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1001</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>DEVOLOVE_4_25.png</pixmap>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>Button_add_filme</zorder>
+  <zorder>Button_pesq_filme</zorder>
  </widget>
  <resources/>
  <connections/>
