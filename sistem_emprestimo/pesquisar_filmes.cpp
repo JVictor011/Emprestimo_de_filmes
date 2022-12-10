@@ -50,7 +50,7 @@ void pesquisar_filmes::on_Button_busca_clicked()
     QString pesquisa = ui->line_pesquisa->text();
     ui->lista_de_itens->clear();
     QSqlQuery query;
-        query.prepare("select * from iten_filmes WHERE nome='"+pesquisa+"' or diretor = '"+pesquisa+"' or genero = '"+pesquisa+"'");
+        query.prepare("select * from iten_filmes WHERE nome='"+pesquisa+"' or diretor = '"+pesquisa+"' or genero = '"+pesquisa+"' or status ='"+pesquisa+"'");
         if(query.exec()){
             int aux {0};
             ui->lista_de_itens->setColumnCount(7);
@@ -102,7 +102,7 @@ void pesquisar_filmes::on_Button_emprestar_clicked()
         }else if(aux == 1){
             QMessageBox::warning(this,"ERRO", "ERRO no emprestimo!");
         }else{
-            QMessageBox::warning(this,"NEGADO", "Filme indisponivel!");
+            QMessageBox::warning(this,"NEGADO", "Filme indisponivel, ficara disponivel em 1 dia!");
         }
     }
 }
